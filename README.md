@@ -8,6 +8,7 @@ How many have you played where instead, you're the dragon?
 
 Exactly. Welcome to Adventures of a Dragon, a generic title for a generic game, but from a different perspective.
 
-## Progress:
+## Changelog:
 
-None
+7/16/2022:
+Creation of project
