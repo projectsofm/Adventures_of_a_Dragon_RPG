@@ -1,5 +1,5 @@
 import sys
-impoxrt os
+import os
 
 class Player:
     def __init__(self, name):
