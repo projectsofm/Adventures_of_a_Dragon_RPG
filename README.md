@@ -1,4 +1,4 @@
-# Adventures of a Dragon: RPG
+# Adventures of a Dragon
 A classic text-based rpg, with a twist.
 
 
