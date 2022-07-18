@@ -2,6 +2,7 @@ import sys
 import os
 import time
 import random
+import pickle
 
 weapons = {"Great Sword": 40}
 
@@ -55,7 +56,18 @@ def main():
     if option == "1": 
         start()
     elif option == "2": 
-        pass
+        if os.path.exists("Save File") == True:
+            os.system('cls')
+            with open("Save File", "rb") as f:
+                global Player1
+                Player1 = pickle.load(f)
+            print("Loaded!")
+            option = input(' ')
+            start1()
+        else:
+            print("There is no save file")
+            option = input(' ')
+            main()
     elif option == "3":
         sys.exit()
     else:
@@ -83,18 +95,56 @@ def start1():
     print("2) Store")
     print("3) Save")
     print("4) Exit")
+    print("5) Inventory")
     option = input("> ")
     if option == "1":
         prefight()
     elif option == "2":
         store()
     elif option == "3":
-        pass
+        os.system('cls')
+        with open("Save File", "wb") as f:
+            pickle.dump(Player1, f)
+            print("\n...Game saved!\n")
+        option = input(' ')
+        start()
     elif option == "4":
         sys.exit()
+    elif option == "5":
+        inventory()
     else:
         start1()
-
+def inventory():
+    os.system('cls')
+    print("What want?")
+    print("1) Equip weapon")
+    print("2) Back")
+    option = input("> ")
+    if option == 1:
+        equip()
+    elif option == 2:
+        start1()
+        
+def equip():
+    os.system('cls')
+    print("What equip?")
+    for weapon in Player1.weapons:
+        print(weapon)
+    print("b to go back")
+    option = input("> ")
+    if option == Player1.currweapon:
+        print("already euiped!")
+        option = input(' ')
+        equip()
+    elif option == "b":
+        inventory()
+    elif option in Player1.weapons:
+        Player1.currweapon = option
+        print("Success you equip %s" % option)
+        equip()
+    else:
+        print("You dont have a %s!" % option)
+        
 def prefight():
     os.system('cls')
     global enemy
