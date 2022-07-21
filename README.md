@@ -15,9 +15,4 @@ Welcome to Adventures of a Dragon, a generic title for a generic game, but inste
 
 7/16/2022:
 
-Creation of project
-
-
-7/19/2022:
-
-Bare bones completed
+Project creation
