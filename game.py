@@ -28,24 +28,6 @@ class Player:
             attack == 15
             
         return attack
-        
-class Goblin:
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth = 50
-        self.health = self.maxhealth
-        self.attack = 5
-        self.goldgain = 10
-Goblin1=Goblin("Goblin")
-
-class Zombie:
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth = 70
-        self.health = self.maxhealth
-        self.attack = 7
-        self.goldgain = 15
-Zombie1=Zombie("Zombie")
 
 def main():
     os.system('cls')
